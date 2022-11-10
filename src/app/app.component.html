@@ -2,7 +2,7 @@
   <div class="text-center tituloClass">APLICACIÓN DE CITAS</div>
   <div class="row mt-3">
     <div class="col-lg-6">
-      <app-crear-cita></app-crear-cita>
+      <app-crear-cita (nuevacita)="agregarCita($event)"></app-crear-cita>
     </div>
     <div class="col-lg-6">
       <app-list-citas></app-list-citas>
