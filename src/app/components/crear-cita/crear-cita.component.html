@@ -1,22 +1,26 @@
 <div class="card bg-light">
   <div class="card-body">
     <h5 class="card-title text-center">Agregar Cita</h5>
+    <div *ngIf="formularioIncorrecto" class="text-center">
+      <span class="badge text-bg-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+    </div>
     <div class="form-group mb-3">
       <label for="">Nombre</label>
-      <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre">
+      <input type="text" id="nombre" [(ngModel)]="nombre" class="form-control" placeholder="Ingrese su nombre">
     </div>
     <div class="form-group mb-3">
       <label for="">Fecha</label>
-      <input type="date" id="fecha" class="form-control">
+      <input type="date" id="fecha" [(ngModel)]="fecha" class="form-control">
     </div>
     <div class="form-group mb-3">
       <label for="">Hora</label>
-      <input type="time" id="hora" class="form-control">
+      <input type="time" id="hora" [(ngModel)]="hora" class="form-control">
     </div>
     <div class="form-group mb-3">
       <label for="">Sintomas</label>
-      <textarea name="" id="sintomas" rows="3" class="form-control" placeholder="Ingrese los sintomas"></textarea>
+      <textarea name="" id="sintomas" [(ngModel)]="sintomas" rows="3" class="form-control"
+        placeholder="Ingrese los sintomas"></textarea>
     </div>
-    <button class="btn btn-primary btmn-block button-cita">Agregar Cita</button>
+    <button class="btn btn-primary btmn-block button-cita" (click)="agregarCita()">Agregar Cita</button>
   </div>
 </div>
